@@ -1,16 +1,17 @@
-package cutefulmod.mixin;
-
+package net.fabricmc.example.mixin;
+/*
 import com.mojang.blaze3d.systems.RenderSystem;
-import cutefulmod.IChatScreen;
-import cutefulmod.config.Configs;
+//import cutefulmod.IChatScreen;
+import net.fabricmc.example.config.Configs;
+import net.fabricmc.example.IChatScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.render.*;
-//import net.minecraft.client.util.math.Matrix4f;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.util.math.Matrix4f;
+//import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Matrix4f;
+//import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -214,4 +215,4 @@ public abstract class WorldRendererMixin {
             bufferBuilder.vertex(model, c0, y1, c0).color(red, green, blue, alpha).next();
         }
     }
-}
+}*/

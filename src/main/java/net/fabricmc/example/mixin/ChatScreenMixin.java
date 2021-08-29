@@ -1,6 +1,6 @@
 package net.fabricmc.example.mixin;
 
-import cutefulmod.IChatScreen;
+import net.fabricmc.example.IChatScreen;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,7 +17,7 @@ public class ChatScreenMixin implements IChatScreen {
     @Shadow protected TextFieldWidget chatField;
 
     @Inject(
-            method = "onChatFieldUpdate",
+            method = "tick",
             at = @At("RETURN"),
             cancellable = true)
     private void updateMessageOnChatFieldUpdate(CallbackInfo ci) {

@@ -1,10 +1,10 @@
-package cutefulmod.mixin;
+package net.fabricmc.example.mixin;
 
-import cutefulmod.IGameOptions;
-import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.option.KeyBinding;
+import net.fabricmc.example.IGameOptions;
+import net.minecraft.client.options.GameOptions;
+import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.options.GameOptions;
 import org.apache.commons.lang3.ArrayUtils;
-import org.lwjgl.glfw.GLFW;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -12,11 +12,13 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.lwjgl.input.Keyboard;
 
 @Mixin(GameOptions.class)
 public class GameOptionsMixin implements IGameOptions {
 
-    @Shadow @Final @Mutable
+    @Shadow
+    @Mutable
     public KeyBinding[] keysAll;
 
     public KeyBinding keyCutefulModMenu;
@@ -28,7 +30,7 @@ public class GameOptionsMixin implements IGameOptions {
             )
     )
     private void onLoadInjectAtHead(CallbackInfo ci) {
-        keyCutefulModMenu = new KeyBinding("Open CutefulMod's menu", GLFW.GLFW_KEY_F7, "CutefulMod");
+        keyCutefulModMenu = new KeyBinding("key.cutefull",Keyboard.KEY_F7, "CutefulMod");
         keysAll = ArrayUtils.add(keysAll, keyCutefulModMenu);
     }
 

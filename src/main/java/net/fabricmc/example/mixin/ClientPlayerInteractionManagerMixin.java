@@ -1,6 +1,6 @@
 package net.fabricmc.example.mixin;
 
-import net.fabricmc.example.config.Configs;
+/*import net.fabricmc.example.config.Configs;
 import net.minecraft.block.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -46,4 +46,4 @@ public abstract class ClientPlayerInteractionManagerMixin {
 	public boolean canBeClicked(Block block) {
 		return block instanceof CraftingTableBlock || block instanceof NoteBlock || block instanceof BlockWithEntity && !(block instanceof JukeboxBlock || block instanceof BeehiveBlock || block instanceof EndGatewayBlock);
 	}
-}
+}*/

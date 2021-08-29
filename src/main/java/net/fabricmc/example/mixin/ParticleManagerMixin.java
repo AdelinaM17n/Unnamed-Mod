@@ -1,6 +1,6 @@
-package cutefulmod.mixin;
+package net.fabricmc.example.mixin;
 
-import cutefulmod.config.Configs;
+import net.fabricmc.example.config.Configs;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleManager;

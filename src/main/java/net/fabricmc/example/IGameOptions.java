@@ -1,6 +1,6 @@
-package cutefulmod;
+package net.fabricmc.example;
 
-import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.options.KeyBinding;
 
 public interface IGameOptions {
 

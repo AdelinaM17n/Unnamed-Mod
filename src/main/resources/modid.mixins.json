@@ -4,7 +4,12 @@
   "package": "net.fabricmc.example.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "GameRenderMixin"
+    "ChatScreenMixin",
+    "GameOptionsMixin",
+    "GameRenderMixin",
+    "MinecraftClientMixin",
+    "ParticleManagerMixin",
+    "SpellParticleMixin"
   ],
   "client": [
   ],
