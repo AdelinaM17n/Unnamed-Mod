@@ -15,6 +15,7 @@ import net.minecraft.client.util.math.Matrix4f;
 import net.minecraft.util.math.BlockPos;
 //import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL41;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -33,13 +34,13 @@ public abstract class WorldRendererMixin {
             method = "render",
             at = @At(
                     value = "INVOKE",
-                    shift = At.Shift.BEFORE,
-                    target = "Lnet/minecraft/client/render/BackgroundRenderer;method_23792()V"
+                    shift = At.Shift.BEFORE
+                    //target = "Lnet/minecraft/client/render/BackgroundRenderer;method_23792()V"
             )
     )
     private void onRenderInjectBeforeRenderParticles(float tickDelta, long nanoTime, CallbackInfo ci) {
         Screen currentScreen = client.currentScreen;
-        if (currentScreen instanceof ChatScreen && !((IChatScreen)currentScreen).getMessage().equals("") && Configs.getInstance().fillCloneBoundingBox.value) {
+        if (currentScreen instanceof ChatScreen) {
             String[] args = ((IChatScreen)currentScreen).getMessage().split(" ");
             if ((args[0].equals("/fill") || args[0].equals("/clone")) && args.length >= 7) {
                 BlockPos pos1;
@@ -132,7 +133,11 @@ public abstract class WorldRendererMixin {
         //matrices.push();
         GlStateManager.pushMatrix();
         //matrices.translate(posOrigin.getX() - cameraPos.getX(), posOrigin.getY() - cameraPos.getY(), posOrigin.getZ() - cameraPos.getZ());
-        GlStateManager.translated(posOrigin.getX() - cameraPos.x, posOrigin.getY() - cameraPos.y, posOrigin.getZ() - cameraPos.z);
+        //GL11.glTranslated(posOrigin.getX() - cameraPos.x, posOrigin.getY() - cameraPos.y, posOrigin.getZ() - cameraPos.z);
+        GlStateManager.translated(posOrigin.getX() - cameraPos.x,posOrigin.getY() - cameraPos.y,posOrigin.getZ() - cameraPos.z);
+        //GL11.glScaled(posOrigin.getX() / cameraPos.x, posOrigin.getY() - cameraPos.y, posOrigin.getZ() - cameraPos.z);
+
+
 
         //Matrix4f model = GlStateManager; //.peek().getModel();
 

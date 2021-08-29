@@ -27,7 +27,7 @@ public class CutefulModScreen extends Screen {
     @Override
     public void init() {
         //assert this.client != null;
-        super.init(client, width, height);
+        //super.init(client, width, height);
         list = new OptionPairWidget(client, width, height, 32, this.height - 32, 25);
 
         int heightOfButton = 40;
