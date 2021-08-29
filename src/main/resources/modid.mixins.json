@@ -5,11 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ChatScreenMixin",
+    "ClientPlayerInteractionManagerMixin",
     "GameOptionsMixin",
     "GameRenderMixin",
     "MinecraftClientMixin",
     "ParticleManagerMixin",
-    "SpellParticleMixin"
+    "SpellParticleMixin",
+    "WorldRendererMixin"
   ],
   "client": [
   ],
