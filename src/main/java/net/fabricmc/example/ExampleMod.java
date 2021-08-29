@@ -1,8 +1,13 @@
 package net.fabricmc.example;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.server.command.GameRuleCommand;
+import net.minecraft.world.GameRuleManager;
 
 public class ExampleMod implements ModInitializer {
+
+
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
